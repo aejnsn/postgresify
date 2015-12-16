@@ -1,0 +1,20 @@
+{
+    "name": "aejnsn/laravel-pgsql-types",
+    "description": "Extended PostgreSQL Types for Laravel",
+    "keywords": ["postgresql", "pgsql", "laravel", "types"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aaron Johnson",
+            "email": "aaron@aejnsn.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.1.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    }
+}
