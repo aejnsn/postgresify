@@ -3,7 +3,7 @@
 namespace Aejnsn\LaravelPgsqlTypes;
 
 use Aejnsn\LaravelPgsqlTypes\Schema\Builder as SchemaBuilder;
-use Aejnsn\LaravelPgsqlTypes\Schema\Grammars\PostgresGrammar as AejnsnPostgresGrammar;
+use Aejnsn\LaravelPgsqlTypes\Schema\Grammars\PostgresGrammar as AejnsnPostgresSchemaGrammar;
 use Illuminate\Database\PostgresConnection as BasePostgresConnection;
 use Illuminate\Database\Query\Processors\PostgresProcessor;
 
@@ -19,7 +19,7 @@ class PostgresConnection extends BasePostgresConnection
 
     protected function getDefaultSchemaGrammar()
     {
-        return $this->withTablePrefix(new AejnsnPostgresGrammar);
+        return $this->withTablePrefix(new AejnsnPostgresSchemaGrammar);
     }
 
     protected function getDefaultPostProcessor()

@@ -2,7 +2,8 @@
 
 namespace Aejnsn\LaravelPgsqlTypes;
 
-use Illuminate\Database\Connectors\ConnectionFactory;
+use Aejnsn\LaravelPgsqlTypes\Connectors\ConnectionFactory;
+use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\DatabaseServiceProvider as BaseDatabaseServiceProvider;
 
 class DatabaseServiceProvider extends BaseDatabaseServiceProvider

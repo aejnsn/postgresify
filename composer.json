@@ -11,10 +11,14 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.5.9",
         "laravel/framework": "5.1.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aejnsn\\LaravelPgsqlTypes\\": "src/"
+        }
     }
 }
