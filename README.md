@@ -1,61 +1,78 @@
-# Laravel PostgreSQL Types
+# Laravel Postgresify
 
 ## Table of Contents
 
-**[Network Address Types](#network-address-types)**
-
-* [CIDR](#cidr)
-* [IP Address](#ip-address)
-* [MAC Address](#mac-address)
 
 **[Geometric Types](#geometric-types)**
 
-* [Point](#point)
+* [Box](#box)
+* [Circle](#circle)
 * [Line](#line)
 * [Line Segment](#line-segment)
-* [Box](#box)
 * [Path](#path)
-* [Circle](#circle)
+* [Point](#point)
 * [Polygon](#polygon)
+
+
+**[Monetary Types](#monetary-types)**
+
+* [Money](#money)
+
+
+**[Network Address Types](#network-address-types)**
+
+* [IP Address](#ip-address)
+* [MAC Address](#mac-address)
+* [Netmask](#netmask)
+
 
 **[Range Types](#range-types)**
 
+* [Date Range](#date-range)
 * [Integer Range](#integer-range)
 * [Numeric Range](#numeric-range)
 * [Timestamp Range](#timestamp-range)
 * [Timestamp Range w/ Timezone](#timestamp-timezone-range)
-* [Date Range](#date-range)
 
+
+**[License](#license)**
 **[References](#references)**
-
-
-## Network Address Types
-
-### CIDR
-
-### IP Address
-
-### MAC Address
 
 
 ## Geometric Types
 
-### Point
+### Box
+
+### Circle
 
 ### Line
 
 ### Line Segment
 
-### Box
-
 ### Path
 
-### Circle
+### Point
 
 ### Polygon
 
 
+## Monetary Types
+
+### Money
+
+
+## Network Address Types
+
+### IP Address
+
+### MAC Address
+
+### Netmask
+
+
 ## Range Types
+
+### Date Range
 
 ### Integer Range
 
@@ -64,8 +81,6 @@
 ### Timestamp Range
 
 ### Timestamp Range w/ Timezone
-
-### Date Range
 
 
 ## References

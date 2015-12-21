@@ -1,20 +1,18 @@
 <?php
 
-namespace Aejnsn\LaravelPgsqlTypes\Schema\Grammars;
+namespace Aejnsn\LaravelPostgresify\Schema\Grammars;
 
-use Illuminate\Database\Grammar;
+use Illuminate\Database\Schema\Grammars\PostgresGrammar as BasePostgresGrammar;
 use Illuminate\Support\Fluent;
 
-class PostgresGrammar extends Grammar
+class PostgresGrammar extends BasePostgresGrammar
 {
-
-
     protected function typeIpAddress(Fluent $column)
     {
         return 'inet';
     }
 
-    protected function typeCidr(Fluent $column)
+    protected function typeNetmask(Fluent $column)
     {
         return 'cidr';
     }
@@ -72,8 +70,12 @@ class PostgresGrammar extends Grammar
 
     protected function typeIntegerRange(Fluent $column)
     {
-        //Conditionally based on parameter from column specs
         return 'int4range';
+    }
+
+    protected function typeBigIntegerRange(Fluent $column)
+    {
+        return 'int8range';
     }
 
     protected function typeNumericRange(Fluent $column)

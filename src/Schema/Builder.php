@@ -1,8 +1,14 @@
 <?php
 
-namespace Aejnsn\LaravelPgsqlTypes\Schema;
+namespace Aejnsn\LaravelPostgresify\Schema;
 
-class Builder extends Illuminate\Database\Schema\Builder
+use Closure;
+use Illuminate\Database\Schema\Builder as BaseBuilder;
+
+class Builder extends BaseBuilder
 {
-
+    protected function createBlueprint($table, Closure $callback = null)
+    {
+        return new Blueprint($table, $callback);
+    }
 }

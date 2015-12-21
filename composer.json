@@ -1,5 +1,5 @@
 {
-    "name": "aejnsn/laravel-pgsql-types",
+    "name": "aejnsn/laravel-postgresify",
     "description": "Extended PostgreSQL Types for Laravel",
     "keywords": ["postgresql", "pgsql", "laravel", "types"],
     "license": "MIT",
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Aejnsn\\LaravelPgsqlTypes\\": "src/"
+            "Aejnsn\\LaravelPostgresify\\": "src/"
         }
     }
 }
