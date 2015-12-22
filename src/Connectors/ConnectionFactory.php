@@ -1,8 +1,8 @@
 <?php
 
-namespace Aejnsn\LaravelPgsqlTypes\Connectors;
+namespace Aejnsn\LaravelPostgresify\Connectors;
 
-use Aejnsn\LaravelPgsqlTypes\PostgresConnection;
+use Aejnsn\LaravelPostgresify\PostgresConnection;
 use Illuminate\Database\Connectors\ConnectionFactory as BaseConnectionFactory;
 use PDO;
 
