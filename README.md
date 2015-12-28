@@ -3,6 +3,12 @@
 ## Table of Contents
 
 
+**[What is this?](#what-is-this)**
+
+
+**[Installation?](#installation)**
+
+
 **[Geometric Types](#geometric-types)**
 
 * [Box](#box)
@@ -36,6 +42,7 @@
 
 
 **[License](#license)**
+
 **[References](#references)**
 
 

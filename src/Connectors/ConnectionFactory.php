@@ -8,6 +8,18 @@ use PDO;
 
 class ConnectionFactory extends BaseConnectionFactory
 {
+    /**
+     * Create a new connection instance with Postgresify's PostgresConnection.
+     *
+     * @param  string   $driver
+     * @param  \PDO     $connection
+     * @param  string   $database
+     * @param  string   $prefix
+     * @param  array    $config
+     * @return \Illuminate\Database\Connection
+     *
+     * @throws \InvalidArgumentException
+     */
     protected function createConnection($driver, PDO $connection, $database, $prefix = '', array $config = [])
     {
         if ($this->container->bound($key = "db.connection.{$driver}")) {
