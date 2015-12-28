@@ -96,12 +96,4 @@ class Blueprint extends BaseBlueprint
     {
         return $this->addColumn('money', $column);
     }
-
-
-
-    public function temporal()
-    {
-        $this->timestampRange('temporal_validity');
-        $this->index('temporal_validity');
-    }
 }
