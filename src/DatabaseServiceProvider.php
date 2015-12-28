@@ -14,7 +14,8 @@ class DatabaseServiceProvider extends BaseDatabaseServiceProvider
             return new ConnectionFactory($app);
         });
 
-        $this->app->singleton('db.factory', function ($app) {
+
+        $this->app->singleton('db', function ($app) {
             return new DatabaseManager($app, $app['db.factory']);
         });
     }
