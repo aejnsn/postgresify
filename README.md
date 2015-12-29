@@ -105,7 +105,7 @@ like so:
 
 ### Basic Usage
 When you would like to use the PostgreSQL types made available via Postgresify, be sure your migrations (or other uses
-of Laravel's Schema Builder) ```use``` the ```Aejnsn\LaravelPostgresify\Schema\Blueprint``` class as in this example:
+of Illuminate's Schema Builder) ```use``` the ```Aejnsn\LaravelPostgresify\Schema\Blueprint``` class as in this example:
 ```php
 <?php
 
