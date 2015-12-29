@@ -52,17 +52,17 @@ circle, etc., within Laravel's Schema Builder and retrieve meaningful data from 
 
 Example Migration:
 ```php
-    Schema::create('hotel_search', function (Blueprint $table) {
-        ...
+Schema::create('hotel_search', function (Blueprint $table) {
+    ...
 
-        $table->point('geocode_coordinates');
-        $table->ipAddress('visitor_ip_address');
-        $table->circle('search_area');
-        $table->dateRange('reservation_period');
-        $table->money('budget');
+    $table->point('geocode_coordinates');
+    $table->ipAddress('visitor_ip_address');
+    $table->circle('search_area');
+    $table->dateRange('reservation_period');
+    $table->money('budget');
 
-        ...
-    });
+    ...
+});
 ```
 
 Life's easier, right? The above use cases of PostgreSQL's types eliminate a few immediately noticeable headaches:
@@ -70,7 +70,7 @@ Life's easier, right? The above use cases of PostgreSQL's types eliminate a few 
 - IP address types will store IPv4 or IPv6, and has plenty of nifty functions--see [PostgreSQL Doc](http://www.postgresql.org/docs/9.4/static/functions-net.html).
 - Circle types store a center point and a radius <(x, y), r>. I've seen hacky ways to store radii without this.
 - Date range types store just that, date ranges. This, like the point type, eliminates the necessity of the second field.
-- Money types store a signed, locale-sensitive currency amount, with a range of +/- 92 quadrillion!. No more DECIMAL(11,2) or whatever people do these days.
+- Money types store a signed, locale-sensitive currency amount, with a range of +/- 92 quadrillion! No more `DECIMAL(11,2)` or whatever people do these days.
 
 Now let's discuss the actual utility afforded by these additional types. PostgreSQL is nicely equipped with functions
 and operators for meaningfully working with these data types. This depends on the architecture of your environment, but
