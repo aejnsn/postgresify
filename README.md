@@ -171,8 +171,8 @@ up the display and return of doing so. ```Money``` is more performant than ```de
 
 ## Network Address Types
 
-Network addresses can be a pain to work with. Imagine a use case where you need to query all IP addresses of a certain
-subnet mask. PostgreSQL has [Network Address Functions and Operators](http://www.postgresql.org/docs/9.4/static/functions-net.html)
+Network addresses can be a pain to work with. Imagine the use case where you would need to query all IP addresses of a
+certain subnet mask. PostgreSQL has [Network Address Functions and Operators](http://www.postgresql.org/docs/9.4/static/functions-net.html)
 for purposes like this.
 
 ### IP Address
