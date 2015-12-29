@@ -53,7 +53,7 @@ circle, etc., within Laravel's Schema Builder and retrieve meaningful data from 
 Example Migration:
 ```php
 Schema::create('hotel_search', function (Blueprint $table) {
-    ...
+    // ...
 
     $table->point('geocode_coordinates');
     $table->ipAddress('visitor_ip_address');
@@ -61,7 +61,7 @@ Schema::create('hotel_search', function (Blueprint $table) {
     $table->dateRange('reservation_period');
     $table->money('budget');
 
-    ...
+    // ...
 });
 ```
 
@@ -86,8 +86,12 @@ To install this package you will need:
 - Laravel 5.1+ or Lumen 5.1+
 - PHP 5.5.9+
 
+This package is intended for **PostgreSQL 9.4**.
+
 Add this package to your ```composer.json``` file as a dependency:
 ```composer require aejnsn/laravel-postgresify```
+
+### Laravel
 
 After installing via Composer, register Postgresify's ```DatabaseServiceProvider``` in your ```config/app.php``` configuration file
 like so:
@@ -113,7 +117,7 @@ class CreateHotelsTable extends Migration
     public function up()
     {
         Schema::create('hotels', function (Blueprint $table) {
-            // Create a schema using Postgresify's types...
+            // Build your schema using PostgreSQL's awesome types...
         });
     }
 
