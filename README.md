@@ -67,7 +67,7 @@ Schema::create('hotel_search', function (Blueprint $table) {
 
 Life's easier, right? The above use cases of PostgreSQL's types eliminate a few immediately noticeable headaches:
 - Point types store geographic coordinates in one field--not two. This may ease query writing, more on that in a second.
-- IP address types will store IPv4 or IPv6, and has plenty of nifty functions--see [PostgreSQL Doc](http://www.postgresql.org/docs/9.4/static/functions-net.html).
+- IP address types will store IPv4 or IPv6--no `VARCHAR` here.
 - Circle types store a center point and a radius <(x, y), r>. I've seen hacky ways to store radii without this.
 - Date range types store just that, date ranges. This, like the point type, eliminates the necessity of the second field.
 - Money types store a signed, locale-sensitive currency amount, with a range of +/- 92 quadrillion! No more `DECIMAL(11,2)` or whatever people do these days.
