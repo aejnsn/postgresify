@@ -6,7 +6,7 @@
 **[What is this?](#what-is-this)**
 
 
-**[Installation?](#installation)**
+**[Installation](#installation)**
 
 
 **[Geometric Types](#geometric-types)**
@@ -66,17 +66,60 @@ Schema::create('hotel_search', function (Blueprint $table) {
 ```
 
 Life's easier, right? The above use cases of PostgreSQL's types eliminate a few immediately noticeable headaches:
-- Point types store geographic coordinates in one field--not two. This may ease query writing, more on that in a second.
+- Point types store geographic coordinates in one field--not two.
 - IP address types will store IPv4 or IPv6--no `VARCHAR` here.
-- Circle types store a center point and a radius <(x, y), r>. I've seen hacky ways to store radii without this.
-- Date range types store just that, date ranges. This, like the point type, eliminates the necessity of the second field.
-- Money types store a signed, locale-sensitive currency amount, with a range of +/- 92 quadrillion! No more `DECIMAL(11,2)` or whatever people do these days.
+- Circle types store a center point and a radius <(x, y), r> in one field. I've seen hacky ways to store radii without
+this.
+- Date range types store just that, date ranges. This, like the point type, eliminates the necessity of the second
+field.
+- Money types store a signed, locale-sensitive currency amount, with a range of +/- 92 quadrillion! No more
+`DECIMAL(11,2)` or whatever people do these days.
 
 Now let's discuss the actual utility afforded by these additional types. PostgreSQL is nicely equipped with functions
 and operators for meaningfully working with these data types. This depends on the architecture of your environment, but
 these types combined with the functions/operators allow you to offload some work onto your database server--which might
 be faster and could reduce some responsibilities within your application's code. Your mileage may vary. See this
 [StackExchange Q/A](http://programmers.stackexchange.com/questions/171024/never-do-in-code-what-you-can-get-the-sql-server-to-do-well-for-you-is-this).
+
+## Installation
+To install this package you will need:
+- Laravel 5.1+ or Lumen 5.1+
+- PHP 5.5.9+
+
+Add this package to your ```composer.json``` file as a dependency:
+```composer require aejnsn/laravel-postgresify```
+
+After installing via Composer, register Postgresify's ```DatabaseServiceProvider``` in your ```config/app.php``` configuration file
+like so:
+```php
+'providers' => [
+    // Other service providers...
+
+    Aejnsn\LaravelPostgresify\DatabaseServiceProvider::class,
+],
+```
+
+### Basic Usage
+When you would like to use the PostgreSQL types made available via Postgresify, be sure your migrations (or other uses
+of Laravel's Schema Builder) ```use``` the ```Aejnsn\LaravelPostgresify\Schema\Blueprint``` class as in this example:
+```php
+<?php
+
+use Aejnsn\LaravelPostgresify\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateHotelsTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('hotels', function (Blueprint $table) {
+            // Create a schema using Postgresify's types...
+        });
+    }
+
+    // ...
+}
+```
 
 ## Geometric Types
 
@@ -124,8 +167,8 @@ be faster and could reduce some responsibilities within your application's code.
 
 ## License
 
-- [MIT](https://raw.githubusercontent.com/aejnsn/laravel-postgresify/master/LICENSE).
+- This package is licensed under the [MIT license](https://raw.githubusercontent.com/aejnsn/laravel-postgresify/master/LICENSE).
 
 ## References
 
-- [PostgreSQL 9.4 Manual](http://www.postgresql.org/docs/9.4/static/datatype.html).
+- [PostgreSQL 9.4 Manual](http://www.postgresql.org/docs/9.4/static/datatype.html)
