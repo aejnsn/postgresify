@@ -68,8 +68,8 @@ Schema::create('hotel_search', function (Blueprint $table) {
 Life's easier, right? The above use cases of PostgreSQL's types eliminate a few immediately noticeable headaches:
 - Point types store geographic coordinates in one field--not two.
 - IP address types will store IPv4 or IPv6--no `VARCHAR` here.
-- Circle types store a center point and a radius <(x, y), r> in one field. I've seen hacky ways to store radii without
-this.
+- Circle types store a center point and a radius <(x, y), r> in one field. There are 'hackier' ways to store radii
+related to a center point without this.
 - Date range types store just that, date ranges. This, like the point type, eliminates the necessity of the second
 field.
 - Money types store a signed, locale-sensitive currency amount, with a range of +/- 92 quadrillion! No more
@@ -93,8 +93,8 @@ Add this package to your ```composer.json``` file as a dependency:
 
 ### Laravel
 
-After installing via Composer, register Postgresify's ```DatabaseServiceProvider``` in your ```config/app.php``` configuration file
-like so:
+After installing via Composer, register Postgresify's ```DatabaseServiceProvider``` in your ```config/app.php```
+configuration file like so:
 ```php
 'providers' => [
     // Other service providers...
@@ -127,6 +127,15 @@ class CreateHotelsTable extends Migration
 
 ## Geometric Types
 
+The geometric types in PostgreSQL can give you a ton of power while reducing complexity in your application.
+> PostgreSQL's geometric types do not try to replace the need for [PostGIS](http://postgis.net/) in cases where
+> geographic calculations are performed. Remember this is geometric, not geographic--the Earth is not flat, or even a
+> perfect sphere, it's an oblate spheroid (ellipsoid). That being said, don't use geometric types for heavy geographic
+> work. Please use PostGIS if you determine a need, your accuracy depends on it. For those of you would-be geodesy
+> aficionados, check out Charles F. F. Karney's work. Karney's algorithms are accurate to within 15 nm.
+
+
+
 ### Box
 
 ### Circle
@@ -144,10 +153,27 @@ class CreateHotelsTable extends Migration
 
 ## Monetary Types
 
+Methods of storing currency in an application/database make a hot topic for debate, and there is a ton of misinformation
+on this topic. People start citing [GAAP](http://www.fasab.gov/accounting-standards/authoritative-source-of-gaap/), and
+then it boils down to developers' non-standard preferences. There is too much uncertainty, and I just do not like it.
+Let's look at the methods for storing currency:
+
+1. **Store as ```float```**. Don't do this, you'll have garbage for accuracy.
+2. **Store as ```decimal```/```numeric```**. This is fine and handles the cases where you need to store fractions of a
+cent. Decimal can be a hit to your performance of analytical operations.
+3. **Store as ```integer``` using cents (or other currency's base unit) or use ```money```**. This is best, and works in
+cases where you do **not** need fractions of a cent. PostgreSQL's ```money``` stores as an integer (of cents) but cleans
+up the display and return of doing so. ```Money``` is more performant than ```decimal```. The range of money is
+-92233720368547758.08 to +92233720368547758.07, so yeah, it will handle large amounts.
+
 ### Money
 
 
 ## Network Address Types
+
+Network addresses can be a pain to work with. Imagine a use case where you need to query all IP addresses of a certain
+subnet mask. PostgreSQL has [Network Address Functions and Operators](http://www.postgresql.org/docs/9.4/static/functions-net.html)
+for purposes like this.
 
 ### IP Address
 
@@ -157,6 +183,10 @@ class CreateHotelsTable extends Migration
 
 
 ## Range Types
+
+Ranges are quite powerful. A range includes a lower-bound and an upper-bound, either of which can be inclusive or
+exclusive. It would take four columns to build that functionality without a range type. Check out [PostgreSQL's Range
+Functions and Operators documentation](http://www.postgresql.org/docs/9.4/static/functions-range.html).
 
 ### Date Range
 
