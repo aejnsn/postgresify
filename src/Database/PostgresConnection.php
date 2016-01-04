@@ -1,9 +1,9 @@
 <?php
 
-namespace Aejnsn\LaravelPostgresify;
+namespace Aejnsn\LaravelPostgresify\Database;
 
-use Aejnsn\LaravelPostgresify\Schema\Builder as SchemaBuilder;
-use Aejnsn\LaravelPostgresify\Schema\Grammars\PostgresGrammar as AejnsnPostgresSchemaGrammar;
+use Aejnsn\LaravelPostgresify\Database\Schema\Builder as SchemaBuilder;
+use Aejnsn\LaravelPostgresify\Database\Schema\Grammars\PostgresGrammar as AejnsnPostgresSchemaGrammar;
 use Illuminate\Database\PostgresConnection as BasePostgresConnection;
 use Illuminate\Database\Query\Processors\PostgresProcessor;
 

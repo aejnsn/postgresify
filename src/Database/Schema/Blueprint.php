@@ -1,6 +1,6 @@
 <?php
 
-namespace Aejnsn\LaravelPostgresify\Schema;
+namespace Aejnsn\LaravelPostgresify\Database\Schema;
 
 use Illuminate\Database\Schema\Blueprint as BaseBlueprint;
 

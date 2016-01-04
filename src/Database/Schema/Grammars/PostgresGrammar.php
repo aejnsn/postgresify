@@ -1,6 +1,6 @@
 <?php
 
-namespace Aejnsn\LaravelPostgresify\Schema\Grammars;
+namespace Aejnsn\LaravelPostgresify\Database\Schema\Grammars;
 
 use Illuminate\Database\Schema\Grammars\PostgresGrammar as BasePostgresGrammar;
 use Illuminate\Support\Fluent;
