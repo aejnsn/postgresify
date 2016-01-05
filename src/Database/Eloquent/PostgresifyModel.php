@@ -11,21 +11,17 @@ class PostgresifyModel extends Model
 
     public function getAttributeValue($key)
     {
-        $baseAttributes = parent::getAttributeValue($key);
-        $value = $this->getAttributeFromArray($key);
+        $value = parent::getAttributeValue($key);
 
-        $postgresifyAttributes = [];
-
-        if (in_array($key, $this->postgresifyTypes)) {
+        if (in_array($key, array_keys($this->postgresifyTypes))) {
             if (! is_null($value)) {
-                $postgresifyAttributes[] = PostgresifyTypeTransformer::transform(
+                return PostgresifyTypeTransformer::transform(
                     $key,
                     $value,
                     $this->postgresifyTypes[$key]
                 );
             }
         }
-
-        return array_merge($baseAttributes, $postgresifyAttributes);
+        return $value;
     }
 }

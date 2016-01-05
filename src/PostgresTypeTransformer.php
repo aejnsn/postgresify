@@ -4,12 +4,18 @@ namespace Aejnsn\LaravelPostgresify;
 
 class PostgresifyTypeTransformer
 {
+    public static $validTypes = [
+        'ipAddress',
+        'netmask',
+        'macAddress',
+        'point',
+        'line',
+    ];
+
     public static function transform($key, $value, $typeInformation)
     {
-        $transformMethod = 'transform' . ucfirst($typeInformation->type);
-
-        dd($value);
-        return self::$transformMethod();
+        $transformMethod = 'transform' . ucfirst($typeInformation['type']);
+        return self::$transformMethod($key, $value, $typeInformation);
     }
 
     public static function transformIpAddress($key, $value, $typeInformation)
@@ -29,7 +35,15 @@ class PostgresifyTypeTransformer
 
     public static function transformPoint($key, $value, $typeInformation)
     {
+        $point = new stdClass();
 
+        preg_match_all("/-?\d+\.\d+/", $value, $matches);
+
+        $point->x = floatval($matches[0][0]);
+        $point->y = floatval($matches[0][1]);
+        $point->type = 'point';
+
+        return $point;
     }
 
     public static function transformLine($key, $value, $typeInformation)
