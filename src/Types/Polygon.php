@@ -2,7 +2,7 @@
 
 namespace Aejnsn\LaravelPostgresify\Types;
 
-class Polygon extends AbstractType implements TypeInterface
+class Polygon extends AbstractType implements GeometricFigureInterface, PlaneFigureInterface
 {
     public function convertToString()
     {

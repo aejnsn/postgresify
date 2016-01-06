@@ -4,8 +4,10 @@ namespace Aejnsn\LaravelPostgresify\Types;
 
 abstract class AbstractType
 {
-    public function __toString()
-    {
-        return $this->convertToString();
-    }
+    /**
+     * Every child class must override the __toString() magic method.
+     *
+     * @return string
+     */
+    abstract public function __toString();
 }

@@ -2,6 +2,8 @@
 
 namespace Aejnsn\LaravelPostgresify;
 
+use Aejnsn\LaravelPostgresify\Types\Point;
+
 class PostgresifyTypeTransformer
 {
     public static $validTypes = [
@@ -35,14 +37,8 @@ class PostgresifyTypeTransformer
 
     public static function transformPoint($key, $value, $typeInformation)
     {
-        $point = new stdClass();
-
         preg_match_all("/-?\d+\.\d+/", $value, $matches);
-
-        $point->x = floatval($matches[0][0]);
-        $point->y = floatval($matches[0][1]);
-        $point->type = 'point';
-
+        $point = new Point(floatval($matches[0][0]), floatval($matches[0][1]));
         return $point;
     }
 

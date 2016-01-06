@@ -2,7 +2,7 @@
 
 namespace Aejnsn\LaravelPostgresify\Types;
 
-class Netmask extends AbstractType implements TypeInterface
+class Netmask extends AbstractType implements GeometricFigureInterface
 {
     public function convertToString()
     {

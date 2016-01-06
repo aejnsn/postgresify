@@ -2,10 +2,8 @@
 
 namespace Aejnsn\LaravelPostgresify\Types;
 
-class BigIntegerRange extends AbstractType implements TypeInterface
+class BigIntegerRange extends RangeType
 {
-    public function convertToString()
-    {
-        // TODO: Implement convertToString() method.
-    }
+    public $lowerBound;
+    public $upperBound;
 }

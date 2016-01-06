@@ -2,7 +2,7 @@
 
 namespace Aejnsn\LaravelPostgresify\Types;
 
-class TimestampTimezoneRange extends AbstractType implements TypeInterface
+class TimestampTimezoneRange extends AbstractType implements GeometricFigureInterface
 {
     public function convertToString()
     {

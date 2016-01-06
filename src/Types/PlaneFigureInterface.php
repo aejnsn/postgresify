@@ -2,7 +2,7 @@
 
 namespace Aejnsn\LaravelPostgresify\Types;
 
-class NumericRange extends RangeType
+interface PlaneFigureInterface
 {
-    
+
 }

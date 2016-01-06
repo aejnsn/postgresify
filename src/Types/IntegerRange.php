@@ -2,10 +2,15 @@
 
 namespace Aejnsn\LaravelPostgresify\Types;
 
-class IntegerRange extends AbstractType implements TypeInterface
+class IntegerRange extends RangeType
 {
-    public function convertToString()
+    public function lowerBound()
     {
-        // TODO: Implement convertToString() method.
+        // TODO: Implement lowerBound() method.
+    }
+
+    public function upperBound()
+    {
+        // TODO: Implement upperBound() method.
     }
 }

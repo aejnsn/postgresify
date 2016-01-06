@@ -2,7 +2,7 @@
 
 namespace Aejnsn\LaravelPostgresify\Types;
 
-class DateRange extends AbstractType implements TypeInterface
+class DateRange extends AbstractType implements GeometricFigureInterface
 {
     public function convertToString()
     {

@@ -2,7 +2,7 @@
 
 namespace Aejnsn\LaravelPostgresify\Types;
 
-class Path extends AbstractType implements TypeInterface
+class Path extends AbstractType implements GeometricFigureInterface
 {
     public function convertToString()
     {

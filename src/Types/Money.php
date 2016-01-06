@@ -2,7 +2,7 @@
 
 namespace Aejnsn\LaravelPostgresify\Types;
 
-class Money extends AbstractType implements TypeInterface
+class Money extends AbstractType implements GeometricFigureInterface
 {
     public function convertToString()
     {
