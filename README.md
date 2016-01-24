@@ -159,14 +159,14 @@ The geometric types in PostgreSQL can give you a ton of power while reducing com
 Methods of storing currency in an application/database make a hot topic for debate, and there is a ton of misinformation
 on this topic. People start citing [GAAP](http://www.fasab.gov/accounting-standards/authoritative-source-of-gaap/), and
 then it boils down to developers' non-standard preferences. There is too much uncertainty, and I just do not like it.
-Let's look at the methods for storing currency:
+Let's look at some common methods for storing currency:
 
 1. **Store as ```float```**. Don't do this, you'll have garbage for accuracy.
 2. **Store as ```decimal```/```numeric```**. This is fine and handles the cases where you need to store fractions of a
-cent. Decimal can be a hit to your performance of analytical operations.
+cent. Decimal can be a hit to your performance in analytical operations.
 3. **Store as ```integer``` using cents (or other currency's base unit) or use ```money```**. This is best, and works in
 cases where you do **not** need fractions of a cent. PostgreSQL's ```money``` stores as an integer (of cents) but cleans
-up the display and return of doing so. ```Money``` is more performant than ```decimal```. The range of money is
+up the display and return of doing so. ```Money``` is more performant than ```decimal```. The range of ```money``` is
 -92233720368547758.08 to +92233720368547758.07, so yeah, it will handle large amounts.
 
 ### Money
