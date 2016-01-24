@@ -112,7 +112,7 @@ of Illuminate's Schema Builder) ```use``` the ```Aejnsn\Postgresify\Schema\Bluep
 ```php
 <?php
 
-use Aejnsn\Postgresify\Schema\Blueprint;
+use Aejnsn\Postgresify\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateHotelsTable extends Migration
