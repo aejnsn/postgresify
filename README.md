@@ -1,4 +1,7 @@
-# Laravel Postgresify
+# Postgresify
+
+Note
+> This package is under development.
 
 ## Table of Contents
 
@@ -46,9 +49,9 @@
 **[References](#references)**
 
 ## What is this?
-Laravel Postgresify, just Postgresify for short, is a package for Laravel and Lumen that extends support to some of the
-more useful PostgreSQL data types. This package allows you to leverage PostgreSQL's data types, such as point, inet,
-circle, etc., within Laravel's Schema Builder and retrieve meaningful data from Fluent/Eloquent.
+Postgresify is a package for Laravel and Lumen that extends support to some of the more useful PostgreSQL data types.
+This package allows you to leverage PostgreSQL's data types, such as point, inet, circle, etc., within Laravel's Schema
+Builder and retrieve meaningful data from Fluent/Eloquent.
 
 Example Migration:
 ```php
@@ -89,7 +92,7 @@ To install this package you will need:
 This package is intended for **PostgreSQL 9.4**.
 
 Add this package to your ```composer.json``` file as a dependency:
-```composer require aejnsn/laravel-postgresify```
+```composer require aejnsn/postgresify```
 
 ### Laravel
 
@@ -99,17 +102,17 @@ configuration file like so:
 'providers' => [
     // Other service providers...
 
-    Aejnsn\LaravelPostgresify\DatabaseServiceProvider::class,
+    Aejnsn\Postgresify\DatabaseServiceProvider::class,
 ],
 ```
 
 ### Basic Usage
 When you would like to use the PostgreSQL types made available via Postgresify, be sure your migrations (or other uses
-of Illuminate's Schema Builder) ```use``` the ```Aejnsn\LaravelPostgresify\Schema\Blueprint``` class as in this example:
+of Illuminate's Schema Builder) ```use``` the ```Aejnsn\Postgresify\Schema\Blueprint``` class as in this example:
 ```php
 <?php
 
-use Aejnsn\LaravelPostgresify\Schema\Blueprint;
+use Aejnsn\Postgresify\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateHotelsTable extends Migration
@@ -201,7 +204,7 @@ Functions and Operators documentation](http://www.postgresql.org/docs/9.4/static
 
 ## License
 
-- This package is licensed under the [MIT license](https://raw.githubusercontent.com/aejnsn/laravel-postgresify/master/LICENSE).
+- This package is licensed under the [MIT license](https://raw.githubusercontent.com/aejnsn/postgresify/master/LICENSE).
 
 ## References
 

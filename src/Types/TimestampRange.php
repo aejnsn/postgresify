@@ -1,11 +1,7 @@
 <?php
 
-namespace Aejnsn\LaravelPostgresify\Types;
+namespace Aejnsn\Postgresify\Types;
 
 class TimestampRange extends AbstractType implements GeometricFigureInterface
 {
-    public function convertToString()
-    {
-        // TODO: Implement convertToString() method.
-    }
 }

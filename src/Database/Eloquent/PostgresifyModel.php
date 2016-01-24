@@ -1,8 +1,8 @@
 <?php
 
-namespace Aejnsn\LaravelPostgresify\Database\Eloquent;
+namespace Aejnsn\Postgresify\Database\Eloquent;
 
-use Aejnsn\LaravelPostgresify\PostgresifyTypeTransformer;
+use Aejnsn\Postgresify\PostgresifyTypeTransformer;
 use Illuminate\Database\Eloquent\Model;
 
 class PostgresifyModel extends Model

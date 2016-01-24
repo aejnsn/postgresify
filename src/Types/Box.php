@@ -1,14 +1,9 @@
 <?php
 
-namespace Aejnsn\LaravelPostgresify\Types;
+namespace Aejnsn\Postgresify\Types;
 
 class Box extends AbstractType implements GeometricFigureInterface, PlaneFigureInterface
 {
-    public function convertToString()
-    {
-        // TODO: Implement convertToString() method.
-    }
-
     public function area()
     {
         return $this->height() * $this->width();
@@ -53,5 +48,15 @@ class Box extends AbstractType implements GeometricFigureInterface, PlaneFigureI
     public function width()
     {
 
+    }
+
+    /**
+     * Output the type to a string, in the PostgreSQL preferred format.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
     }
 }

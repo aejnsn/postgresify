@@ -1,7 +1,7 @@
 {
-    "name": "aejnsn/laravel-postgresify",
+    "name": "aejnsn/postgresify",
     "description": "Extended PostgreSQL Functionality for Laravel",
-    "keywords": ["postgresql", "pgsql", "laravel", "types"],
+    "keywords": ["postgresql", "pgsql", "laravel", "lumen", "types"],
     "license": "MIT",
     "authors": [
         {
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Aejnsn\\LaravelPostgresify\\": "src/"
+            "Aejnsn\\Postgresify\\": "src/"
         }
     },
     "minimum-stability": "stable"

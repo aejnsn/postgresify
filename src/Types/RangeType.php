@@ -1,14 +1,9 @@
 <?php
 
-namespace Aejnsn\LaravelPostgresify\Types;
+namespace Aejnsn\Postgresify\Types;
 
 abstract class RangeType extends AbstractType
 {
     public $upperBound;
     public $lowerBound;
-
-    public function __toString()
-    {
-        return "{$this->lowerBound},  {$this->upperBound}";
-    }
 }

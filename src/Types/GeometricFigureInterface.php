@@ -2,7 +2,7 @@
 
 namespace Aejnsn\Postgresify\Types;
 
-interface PlaneFigureInterface
+interface GeometricFigureInterface
 {
 
 }

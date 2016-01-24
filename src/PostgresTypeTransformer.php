@@ -1,8 +1,8 @@
 <?php
 
-namespace Aejnsn\LaravelPostgresify;
+namespace Aejnsn\Postgresify;
 
-use Aejnsn\LaravelPostgresify\Types\Point;
+use Aejnsn\Postgresify\Types\Point;
 
 class PostgresifyTypeTransformer
 {

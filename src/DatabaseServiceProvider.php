@@ -1,8 +1,8 @@
 <?php
 
-namespace Aejnsn\LaravelPostgresify;
+namespace Aejnsn\Postgresify;
 
-use Aejnsn\LaravelPostgresify\Database\Connectors\ConnectionFactory;
+use Aejnsn\Postgresify\Database\Connectors\ConnectionFactory;
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\DatabaseServiceProvider as BaseDatabaseServiceProvider;
 

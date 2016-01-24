@@ -1,6 +1,6 @@
 <?php
 
-namespace Aejnsn\LaravelPostgresify\Database\Schema;
+namespace Aejnsn\Postgresify\Database\Schema;
 
 use Closure;
 use Illuminate\Database\Schema\Builder as BaseBuilder;

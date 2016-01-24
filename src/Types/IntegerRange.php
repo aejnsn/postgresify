@@ -1,6 +1,6 @@
 <?php
 
-namespace Aejnsn\LaravelPostgresify\Types;
+namespace Aejnsn\Postgresify\Types;
 
 class IntegerRange extends RangeType
 {
