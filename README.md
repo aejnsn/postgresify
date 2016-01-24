@@ -108,7 +108,7 @@ configuration file like so:
 
 ### Basic Usage
 When you would like to use the PostgreSQL types made available via Postgresify, be sure your migrations (or other uses
-of Illuminate's Schema Builder) ```use``` the ```Aejnsn\Postgresify\Schema\Blueprint``` class as in this example:
+of Illuminate's Schema Builder) ```use``` the ```Aejnsn\Postgresify\Database\Schema\Blueprint``` class as in this example:
 ```php
 <?php
 
