@@ -95,8 +95,7 @@ class PostgresGrammar extends BasePostgresGrammar
     {
         return 'circle';
     }
-
-
+    
     /**
      * Create the column definition for storing amounts of currency with a fixed fractional precision.
      *
@@ -110,7 +109,6 @@ class PostgresGrammar extends BasePostgresGrammar
     {
         return 'money';
     }
-
 
     /**
      * Create the column definition for storing a 32-bit integer range, (lower-bound, upper-bound).
