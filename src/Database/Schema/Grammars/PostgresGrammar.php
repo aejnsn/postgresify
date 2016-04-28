@@ -8,17 +8,6 @@ use Illuminate\Support\Fluent;
 class PostgresGrammar extends BasePostgresGrammar
 {
     /**
-     * Create the column definition for an IPv4 or IPv6 address.
-     *
-     * @param  \Illuminate\Support\Fluent  $column
-     * @return string
-     */
-    protected function typeIpAddress(Fluent $column)
-    {
-        return 'inet';
-    }
-
-    /**
      * Create the column definition for a CIDR notation-style netmask.
      *
      * @param  \Illuminate\Support\Fluent  $column
@@ -28,18 +17,6 @@ class PostgresGrammar extends BasePostgresGrammar
     {
         return 'cidr';
     }
-
-    /**
-     * Create the column definition for a MAC address.
-     *
-     * @param  \Illuminate\Support\Fluent  $column
-     * @return string
-     */
-    protected function typeMacAddress(Fluent $column)
-    {
-        return 'macaddr';
-    }
-
 
     /**
      * Create the column definition for a 2D geometric point (x, y), x and y are floating-point numbers.
