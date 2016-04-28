@@ -1,4 +1,4 @@
-# Postgresify
+![Postgresify](https://cloud.githubusercontent.com/assets/5347897/14873618/83c04980-0cc6-11e6-992b-fef3d866ac94.png)
 
 Note
 > This package is under development.
