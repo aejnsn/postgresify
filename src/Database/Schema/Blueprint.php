@@ -7,28 +7,6 @@ use Illuminate\Database\Schema\Blueprint as BaseBlueprint;
 class Blueprint extends BaseBlueprint
 {
     /**
-     * Create a new IPv4/IPv6 address (inet) column on the table.
-     *
-     * @param  string  $column
-     * @return \Illuminate\Support\Fluent
-     */
-    public function ipAddress($column)
-    {
-        return $this->addColumn('ipAddress', $column);
-    }
-
-    /**
-     * Create a new MAC address (macaddr) column on the table.
-     *
-     * @param  string  $column
-     * @return \Illuminate\Support\Fluent
-     */
-    public function macAddress($column)
-    {
-        return $this->addColumn('macAddress', $column);
-    }
-
-    /**
      * Create a new netmask (CIDR-notation) (cidr) column on the table.
      *
      * @param  string  $column
