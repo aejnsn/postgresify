@@ -2,7 +2,6 @@
 
 namespace Aejnsn\Postgresify;
 
-use Aejnsn\Postgresify\Database\Connectors\ConnectionFactory;
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\DatabaseServiceProvider as BaseDatabaseServiceProvider;
 
@@ -16,7 +15,10 @@ class DatabaseServiceProvider extends BaseDatabaseServiceProvider
     public function register()
     {
         $this->app->singleton('db.factory', function ($app) {
-            return new ConnectionFactory($app);
+            if (version_compare($app->version(), '5.2.0', '>=')) {
+                return new Database\Connectors\FiveTwo\ConnectionFactory($app);
+            }
+            return new Database\Connectors\FiveOne\ConnectionFactory($app);
         });
 
         $this->app->singleton('db', function ($app) {
