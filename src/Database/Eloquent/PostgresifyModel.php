@@ -22,6 +22,7 @@ class PostgresifyModel extends Model
                 );
             }
         }
+        
         return $value;
     }
 }
