@@ -17,7 +17,6 @@ class Blueprint extends BaseBlueprint
         return $this->addColumn('netmask', $column);
     }
 
-
     /**
      * Create a new box column on the table.
      *
@@ -95,7 +94,6 @@ class Blueprint extends BaseBlueprint
         return $this->addColumn('polygon', $column);
     }
 
-
     /**
      * Create a new big (64-bit) integer range (int8) column on the table.
      *
@@ -161,7 +159,6 @@ class Blueprint extends BaseBlueprint
     {
         return $this->addColumn('timestampTimezoneRange', $column);
     }
-
 
     /**
      * Create a new money column on the table.
