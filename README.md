@@ -107,8 +107,7 @@ configuration file like so:
 ```
 
 ### Basic Usage
-When you would like to use the PostgreSQL types made available via Postgresify, be sure your migrations (or other uses
-of Illuminate's Schema Builder) ```use``` the ```Aejnsn\Postgresify\Database\Schema\Blueprint``` class as in this example:
+If you would like code completion in your IDE for the PostgreSQL types made available via Postgresify, be sure your migrations (or other uses of Illuminate's Schema Builder) ```use``` the ```Aejnsn\Postgresify\Database\Schema\Blueprint``` class as in this example:
 ```php
 <?php
 
@@ -120,6 +119,8 @@ class CreateHotelsTable extends Migration
     public function up()
     {
         Schema::create('hotels', function (Blueprint $table) {
+            $table->dateRange('reservation');
+        
             // Build your schema using PostgreSQL's awesome types...
         });
     }
