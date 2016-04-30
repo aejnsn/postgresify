@@ -2,23 +2,24 @@
 
 namespace Aejnsn\Postgresify\Database\Eloquent;
 
-use Aejnsn\Postgresify\PostgresifyTypeTransformer;
+use Aejnsn\Postgresify\PostgresifyTypeCaster;
 use Illuminate\Database\Eloquent\Model;
 
 class PostgresifyModel extends Model
 {
-    protected $postgresifyTypes = [];
+    protected $postgresifyCasts = [];
 
     public function getAttributeValue($key)
     {
         $value = parent::getAttributeValue($key);
 
-        if (in_array($key, array_keys($this->postgresifyTypes))) {
+        if (in_array($key, array_keys($this->postgresifyCasts))) {
             if (! is_null($value)) {
-                return PostgresifyTypeTransformer::transform(
+                $postgresifyTypeCaster = new PostgresifyTypeCaster();
+                return $postgresifyTypeCaster->cast(
                     $key,
                     $value,
-                    $this->postgresifyTypes[$key]
+                    $this->postgresifyCasts[$key]
                 );
             }
         }
