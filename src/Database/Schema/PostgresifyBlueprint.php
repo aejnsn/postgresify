@@ -2,9 +2,9 @@
 
 namespace Aejnsn\Postgresify\Database\Schema;
 
-use Illuminate\Database\Schema\Blueprint as BaseBlueprint;
+use Illuminate\Database\Schema\Blueprint;
 
-class Blueprint extends BaseBlueprint
+class PostgresifyBlueprint extends Blueprint
 {
     /**
      * Create a new netmask (CIDR-notation) (cidr) column on the table.
