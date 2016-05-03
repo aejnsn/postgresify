@@ -1,8 +1,8 @@
 <?php
 
-namespace Aejnsn\Postgresify\Database\Connectors\FiveTwo;
+namespace Aejnsn\Postgresify\Database\FiveOne\Connectors;
 
-use Aejnsn\Postgresify\Database\PostgresConnection;
+use Aejnsn\Postgresify\Database\FiveOne\PostgresConnection;
 use Illuminate\Database\Connectors\ConnectionFactory as BaseConnectionFactory;
 use PDO;
 
@@ -12,7 +12,7 @@ class ConnectionFactory extends BaseConnectionFactory
      * Create a new connection instance with Postgresify's PostgresConnection.
      *
      * @param  string   $driver
-     * @param  \PDO|\Closure     $connection
+     * @param  \PDO     $connection
      * @param  string   $database
      * @param  string   $prefix
      * @param  array    $config
@@ -20,7 +20,7 @@ class ConnectionFactory extends BaseConnectionFactory
      *
      * @throws \InvalidArgumentException
      */
-    protected function createConnection($driver, $connection, $database, $prefix = '', array $config = [])
+    protected function createConnection($driver, PDO $connection, $database, $prefix = '', array $config = [])
     {
         if ($this->container->bound($key = "db.connection.{$driver}")) {
             return $this->container->make($key, [$connection, $database, $prefix, $config]);
