@@ -179,7 +179,7 @@ Network addresses can be a pain to work with. Imagine the use case where you wou
 certain subnet mask. PostgreSQL has [Network Address Functions and Operators](http://www.postgresql.org/docs/9.4/static/functions-net.html)
 for purposes like this.
 
-> I made a [pull request](https://github.com/laravel/framework/pull/12884) for the IP and MAC address types in Laravel. So these two types will be in your initial Laravel installation (5.2.27+), and should work across all of Laravel's supported database systems. However, PostgreSQL, unlike other database systems, has its rich set network address functions and operators built-in.
+> I made a [pull request](https://github.com/laravel/framework/pull/12884) for the IP and MAC address types in Laravel. So these two types will be in your initial Laravel installation (5.2.27+), and should work across all of Laravel's supported database systems. However, PostgreSQL, unlike other database systems, has its rich set of network address functions and operators built-in.
 
 ### IP Address
 
